@@ -1,0 +1,61 @@
+// ──────────────────────────────────────────────
+// Bootstrap variable overrides  (ANTES de importar Bootstrap)
+// Mapeo de la paleta original al motor de Bootstrap
+// ──────────────────────────────────────────────
+
+// Paleta del estudio
+$navy-deep:   #0B1C2E;
+$navy-mid:    #13304F;
+$navy-light:  #1E4976;
+$gold:        #C8A84B;
+$gold-light:  #E2CA82;
+$gold-pale:   #F5EDD4;
+$cream:       #F8F5EE;
+$text-dark:   #1a2a3a;
+$text-mid:    #3d5166;
+$text-muted:  #7a92a8;
+
+// ── Override Bootstrap Theme Colors ──
+$primary:   $navy-deep;
+$secondary: $gold;
+$light:     $cream;
+$dark:      $navy-deep;
+$body-color: $text-dark;
+$body-bg:    #FFFFFF;
+
+// ── Tipografía ──
+$font-family-sans-serif: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+$font-family-serif:      'Cormorant Garamond', Georgia, serif;
+$headings-font-family:   $font-family-serif;
+$headings-font-weight:   600;
+
+// ── Bordes y radios ──
+$border-radius:    2px;
+$border-radius-sm: 2px;
+$border-radius-lg: 4px;
+
+// ── Botones ──
+$btn-border-radius:    2px;
+$btn-border-radius-sm: 2px;
+$btn-border-radius-lg: 2px;
+$btn-font-weight:      600;
+$btn-font-size:        12px;
+
+// ── Navbar ──
+$navbar-dark-color:           #FFFFFF;
+$navbar-dark-brand-color:     #FFFFFF;
+$navbar-padding-y:            0;
+
+// ── Contenedor ──
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+);
+
+// ── Link ──
+$link-color: $gold;
+$link-hover-color: $gold-light;
+$link-decoration: none;

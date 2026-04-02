@@ -1,0 +1,37 @@
+// ──────────────────────────────────────────────
+// main.scss — Punto de entrada SCSS
+// 1. Variables custom (override ANTES de Bootstrap)
+// 2. Bootstrap (solo módulos necesarios)
+// 3. Estilos custom
+// ──────────────────────────────────────────────
+
+// 1. Overrides de variables
+@import 'variables';
+
+// 2. Bootstrap — importación selectiva para bundle más liviano
+@import '../../node_modules/bootstrap/scss/functions';
+@import '../../node_modules/bootstrap/scss/variables';
+@import '../../node_modules/bootstrap/scss/variables-dark';
+@import '../../node_modules/bootstrap/scss/maps';
+@import '../../node_modules/bootstrap/scss/mixins';
+@import '../../node_modules/bootstrap/scss/utilities';
+
+// Layout
+@import '../../node_modules/bootstrap/scss/root';
+@import '../../node_modules/bootstrap/scss/reboot';
+@import '../../node_modules/bootstrap/scss/type';
+@import '../../node_modules/bootstrap/scss/containers';
+@import '../../node_modules/bootstrap/scss/grid';
+
+// Componentes usados
+@import '../../node_modules/bootstrap/scss/buttons';
+@import '../../node_modules/bootstrap/scss/navbar';
+@import '../../node_modules/bootstrap/scss/nav';
+@import '../../node_modules/bootstrap/scss/transitions';
+@import '../../node_modules/bootstrap/scss/close';
+
+// Utilidades
+@import '../../node_modules/bootstrap/scss/utilities/api';
+
+// 3. Custom
+@import 'custom';
