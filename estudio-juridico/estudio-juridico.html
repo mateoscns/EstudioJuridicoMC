@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudio Jurídico Martínez Carabajal & Abogados Asociados</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:wght@400;500&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy-deep:   #0B1C2E;
+      --navy-mid:    #13304F;
+      --navy-light:  #1E4976;
+      --gold:        #C8A84B;
+      --gold-light:  #E2CA82;
+      --gold-pale:   #F5EDD4;
+      --cream:       #F8F5EE;
+      --white:       #FFFFFF;
+      --text-dark:   #1a2a3a;
+      --text-mid:    #3d5166;
+      --text-muted:  #7a92a8;
+      --border:      rgba(200,168,75,0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--navy-deep);
+      border-bottom: 1px solid var(--border);
+      padding: 0 60px;
+      height: 72px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-left {
+      display: flex; flex-direction: column; gap: 1px;
+    }
+    .nav-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px; font-weight: 600; letter-spacing: 0.5px;
+      color: var(--white);
+    }
+    .nav-sub {
+      font-size: 9px; letter-spacing: 3.5px; text-transform: uppercase;
+      color: var(--gold); font-weight: 500;
+    }
+    .nav-cta {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 12px; font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      padding: 10px 24px; border-radius: 2px;
+      background: transparent; cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--navy-deep); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--navy-deep);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+      padding-top: 72px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        radial-gradient(ellipse at 70% 50%, rgba(30,73,118,0.4) 0%, transparent 60%),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 80px,
+          rgba(200,168,75,0.03) 80px,
+          rgba(200,168,75,0.03) 81px
+        );
+      pointer-events: none;
+    }
+    .hero-content {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 80px 60px 80px 80px;
+      position: relative; z-index: 2;
+    }
+    .hero-eyebrow {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 32px;
+    }
+    .hero-eyebrow-line { width: 40px; height: 1px; background: var(--gold); }
+    .hero-eyebrow span {
+      font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--gold); font-weight: 500;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 58px; font-weight: 600; line-height: 1.1;
+      color: var(--white); margin-bottom: 12px;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px; font-weight: 400; font-style: italic;
+      color: var(--text-muted); margin-bottom: 28px; letter-spacing: 0.5px;
+    }
+    .hero-desc {
+      font-size: 16px; line-height: 1.75; color: rgba(255,255,255,0.55);
+      max-width: 420px; margin-bottom: 44px; font-weight: 300;
+    }
+    .hero-actions { display: flex; gap: 16px; align-items: center; }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 12px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 16px 32px; border: none; border-radius: 2px;
+      cursor: pointer; transition: all 0.3s ease;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-outline {
+      background: transparent; border: none;
+      color: rgba(255,255,255,0.5); font-size: 14px;
+      cursor: pointer; text-decoration: underline;
+      text-underline-offset: 4px; font-family: 'Source Sans 3', sans-serif;
+    }
+    .hero-stats {
+      display: flex; gap: 40px; margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(200,168,75,0.15);
+    }
+    .stat { display: flex; flex-direction: column; gap: 4px; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px; font-weight: 600; color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 11px; letter-spacing: 1px;
+      color: rgba(255,255,255,0.35); font-weight: 400;
+    }
+
+    /* Hero right: foto placeholder */
+    .hero-visual {
+      position: relative; display: flex;
+      align-items: flex-end; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-visual::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-mid) 100%);
+      opacity: 0.6;
+    }
+    .hero-badge {
+      position: absolute; bottom: 48px; left: -20px; z-index: 3;
+      background: var(--gold);
+      padding: 14px 28px 14px 40px;
+      border-radius: 0 2px 2px 0;
+    }
+    .hero-badge p {
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--navy-deep); font-weight: 600;
+    }
+    .hero-badge span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px; font-weight: 700; color: var(--navy-deep);
+    }
+
+    /* ── COBERTURA STRIP ── */
+    .cobertura-strip {
+      background: var(--navy-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 80px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .cob-label {
+      font-size: 10px; letter-spacing: 3px; color: var(--gold);
+      text-transform: uppercase; font-weight: 500; white-space: nowrap;
+    }
+    .cob-divider { width: 1px; height: 20px; background: var(--border); }
+    .cob-items { display: flex; gap: 32px; flex-wrap: wrap; }
+    .cob-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; color: rgba(255,255,255,0.6); font-weight: 300;
+    }
+    .cob-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
+
+    /* ── ÁREAS ── */
+    .areas {
+      background: var(--cream);
+      padding: 100px 80px;
+    }
+    .section-header { margin-bottom: 60px; }
+    .section-eyebrow {
+      display: flex; align-items: center; gap: 16px; margin-bottom: 16px;
+    }
+    .section-eyebrow-line { width: 32px; height: 1px; background: var(--gold); }
+    .section-eyebrow span {
+      font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--gold); font-weight: 500;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px; font-weight: 600; color: var(--navy-deep);
+      line-height: 1.2; max-width: 500px;
+    }
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .area-card {
+      background: var(--white);
+      padding: 36px 32px;
+      border-left: 3px solid transparent;
+      transition: all 0.3s ease;
+      cursor: default;
+      position: relative;
+      overflow: hidden;
+    }
+    .area-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px; background: var(--gold);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .area-card:hover { border-left-color: var(--gold); }
+    .area-card:hover::after { transform: scaleX(1); }
+    .area-icon {
+      width: 36px; height: 36px; margin-bottom: 20px;
+      color: var(--gold);
+    }
+    .area-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px; font-weight: 600;
+      color: var(--navy-deep); margin-bottom: 10px; line-height: 1.2;
+    }
+    .area-desc {
+      font-size: 13px; color: var(--text-mid);
+      line-height: 1.65; font-weight: 300;
+    }
+
+    /* ── PERFIL ── */
+    .perfil {
+      background: var(--navy-deep);
+      padding: 100px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .perfil::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      border: 1px solid rgba(200,168,75,0.08);
+      border-radius: 50%;
+    }
+    .perfil::after {
+      content: '';
+      position: absolute; top: -50px; right: -50px;
+      width: 250px; height: 250px;
+      border: 1px solid rgba(200,168,75,0.06);
+      border-radius: 50%;
+    }
+    .perfil-texto { position: relative; z-index: 2; }
+    .perfil-texto p {
+      font-size: 16px; line-height: 1.85;
+      color: rgba(255,255,255,0.55); font-weight: 300;
+      margin-bottom: 32px;
+    }
+    .perfil-texto p strong {
+      color: rgba(255,255,255,0.85); font-weight: 500;
+    }
+    .credentials {
+      display: flex; flex-direction: column; gap: 0;
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+    }
+    .credential {
+      display: flex; align-items: flex-start; gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(200,168,75,0.08);
+    }
+    .cred-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; font-weight: 600; color: var(--gold);
+      line-height: 1; min-width: 64px;
+    }
+    .cred-info { display: flex; flex-direction: column; gap: 3px; }
+    .cred-title {
+      font-size: 14px; font-weight: 500; color: var(--white);
+    }
+    .cred-desc {
+      font-size: 12px; color: var(--text-muted); font-weight: 300;
+    }
+    .perfil-visual {
+      position: relative; z-index: 2;
+      background: var(--navy-mid);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 48px 40px;
+      display: flex; flex-direction: column; gap: 28px;
+    }
+    .pv-header {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); font-weight: 400;
+    }
+    .pv-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 600; color: var(--white);
+      line-height: 1.15;
+    }
+    .pv-title {
+      font-size: 13px; color: var(--text-muted); line-height: 1.6;
+      font-weight: 300;
+    }
+    .pv-divider { height: 1px; background: var(--border); }
+    .pv-detail {
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .pv-row {
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .pv-row-icon { color: var(--gold); margin-top: 2px; flex-shrink: 0; }
+    .pv-row-text { font-size: 13px; color: rgba(255,255,255,0.55); font-weight: 300; line-height: 1.5; }
+
+    /* ── CONTACTO ── */
+    .contacto {
+      background: var(--cream);
+      padding: 100px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contacto-info { display: flex; flex-direction: column; gap: 32px; }
+    .contacto-item {
+      display: flex; align-items: flex-start; gap: 20px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .contacto-item:last-child { border-bottom: none; }
+    .ci-icon {
+      width: 44px; height: 44px; border-radius: 2px;
+      background: var(--navy-deep);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .ci-label {
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--text-muted); font-weight: 500; margin-bottom: 4px;
+    }
+    .ci-value {
+      font-family: 'Lora', serif;
+      font-size: 17px; color: var(--navy-deep); font-weight: 500;
+    }
+    .ci-sub {
+      font-size: 12px; color: var(--text-muted); margin-top: 2px;
+    }
+    .contacto-cta {
+      background: var(--navy-deep);
+      border-radius: 4px;
+      padding: 48px 40px;
+      display: flex; flex-direction: column; gap: 24px;
+    }
+    .cta-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px; font-weight: 600; color: var(--white);
+      line-height: 1.2;
+    }
+    .cta-desc {
+      font-size: 14px; color: rgba(255,255,255,0.5);
+      line-height: 1.7; font-weight: 300;
+    }
+    .btn-wsp-gold {
+      background: var(--gold);
+      color: var(--navy-deep);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 12px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 16px 28px; border: none; border-radius: 2px;
+      cursor: pointer; display: flex; align-items: center; gap: 10px;
+      align-self: flex-start; transition: background 0.3s;
+    }
+    .btn-wsp-gold:hover { background: var(--gold-light); }
+    .cta-note {
+      font-size: 11px; color: rgba(255,255,255,0.25);
+      letter-spacing: 1px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-deep);
+      border-top: 1px solid var(--border);
+      padding: 28px 80px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-left {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px; color: rgba(255,255,255,0.3);
+    }
+    .footer-right {
+      font-size: 11px; letter-spacing: 1px;
+      color: rgba(255,255,255,0.2);
+    }
+    .footer-gold {
+      font-size: 10px; letter-spacing: 2px; color: var(--gold);
+      opacity: 0.5;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-content > * {
+      animation: fadeUp 0.7s ease both;
+    }
+    .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+    .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+    .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+    .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+    .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+    .hero-content > *:nth-child(6) { animation-delay: 0.6s; }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .hero-content { padding: 60px 24px; }
+      .areas-grid { grid-template-columns: 1fr; }
+      .perfil, .contacto { grid-template-columns: 1fr; padding: 60px 24px; }
+      .areas, .cobertura-strip { padding: 60px 24px; }
+      footer { flex-direction: column; gap: 8px; padding: 24px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-left">
+    <div class="nav-title">Martínez Carabajal & Abogados Asociados</div>
+    <div class="nav-sub">Abogados Asociados · Tucumán</div>
+  </div>
+  <button class="nav-cta">Consultar ahora</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span>Estudio Jurídico · Desde 1999</span>
+    </div>
+    <h1>Soluciones legales<br><em>con experiencia</em><br>y compromiso.</h1>
+    <p class="hero-name">Dr. Carlos E. Martínez Carabajal</p>
+    <p class="hero-desc">Asesoramiento jurídico integral para particulares y empresas en la provincia de Tucumán. Trato directo, estrategia clara y resultados.</p>
+    <div class="hero-actions">
+      <button class="btn-gold">
+        <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="#0B1C2E"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.558 4.115 1.529 5.843L0 24l6.335-1.509A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.795 9.795 0 01-4.992-1.364l-.358-.212-3.758.896.952-3.656-.233-.375A9.79 9.79 0 012.182 12C2.182 6.575 6.575 2.182 12 2.182S21.818 6.575 21.818 12 17.425 21.818 12 21.818z" fill="#0B1C2E"/></svg>
+        Consulta por WhatsApp
+      </button>
+      <button class="btn-outline">Ver áreas de práctica ↓</button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">26</div>
+        <div class="stat-label">Años de trayectoria</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">34</div>
+        <div class="stat-label">Años en docencia universitaria</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">9</div>
+        <div class="stat-label">Áreas de práctica</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <img src="input_file_1.png" alt="Dr. Carlos E. Martínez Carabajal" style="position: absolute; width: 100%; height: 100%; object-fit: cover; inset: 0; z-index: 1;">
+    <div class="hero-badge">
+      <span style="font-size:22px;font-weight:700;">Abogado</span>
+    </div>
+  </div>
+</section>
+
+<!-- COBERTURA STRIP -->
+<div class="cobertura-strip">
+  <span class="cob-label">Cobertura judicial</span>
+  <div class="cob-divider"></div>
+  <div class="cob-items">
+    <div class="cob-item"><div class="cob-dot"></div>San Miguel de Tucumán</div>
+    <div class="cob-item"><div class="cob-dot"></div>Monteros</div>
+    <div class="cob-item"><div class="cob-dot"></div>Concepción</div>
+  </div>
+</div>
+
+<!-- ÁREAS DE PRÁCTICA -->
+<section class="areas">
+  <div class="section-header">
+    <div class="section-eyebrow">
+      <div class="section-eyebrow-line"></div>
+      <span>Especialidades</span>
+    </div>
+    <h2 class="section-title">Hacemos todos los fueros:</h2>
+  </div>
+  <div class="areas-grid">
+
+    <div class="area-card">
+      <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      <div class="area-title">Causas Penales</div>
+      <div class="area-desc">Defensa y querella en causas penales. Seguimiento de expedientes en todas las instancias del proceso penal tucumano.</div>
+    </div>
+
+    <div class="area-card">
+      <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      <div class="area-title">Accidentes de Tránsito</div>
+      <div class="area-desc">Reclamaciones por daños materiales, morales y físicos. Representación ante compañías aseguradoras y en sede judicial.</div>
+    </div>
+
+    <div class="area-card">
+      <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <div class="area-title">Accidentes de Trabajo (A.R.T.)</div>
+      <div class="area-desc">Apoderados de ART y compañías de seguro. Gestión integral de siniestros, incapacidades y reclamos ante organismos competentes.</div>
+    </div>
+
+    <div class="area-card">
+      <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div class="area-title">Violencia de Género</div>
+      <div class="area-desc">Asesoramiento, acompañamiento y representación legal especializada en el ámbito familiar.</div>
+    </div>
+
+    <div class="area-card">
+      <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+      <div class="area-title">Redacción de Escritos</div>
+      <div class="area-desc">Autenticación, confección y revisión de documentos jurídicos. Redacción estructurada de todo tipo de escritos judiciales.</div>
+    </div>
+
+    <div class="area-card">
+      <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      <div class="area-title">Diligencias en General</div>
+      <div class="area-desc">Realización de trámites, gestiones y diligencias ante distintos organismos e instituciones públicas y privadas.</div>
+    </div>
+
+    <div class="area-card">
+      <svg class="area-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      <div class="area-title">Seguimientos de Expedientes</div>
+      <div class="area-desc">Control exhaustivo y actualización constante del estado de sus causas y expedientes en todas las dependencias.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PERFIL -->
+<section class="perfil">
+  <div class="perfil-texto">
+    <div class="section-eyebrow" style="margin-bottom:16px">
+      <div class="section-eyebrow-line"></div>
+      <span style="color:var(--gold);font-size:10px;letter-spacing:4px;text-transform:uppercase;">El estudio</span>
+    </div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;color:var(--white);line-height:1.2;margin-bottom:32px;">Trayectoria que<br><em style="font-style:italic;color:var(--gold-light);">respalda cada caso</em></h2>
+    <p>El Estudio Jurídico <strong>Martínez Carabajal & Abogados Asociados</strong> cuenta con <strong>más de 26 años de ejercicio profesional continuo</strong> en Tucumán. Especializados en gestión judicial y procuración, brindamos cobertura en los principales centros judiciales de la provincia.</p>
+    <p>El estudio actúa como <strong>apoderado de ART, compañías de seguro de retiro y productoras de seguros</strong>, ofreciendo a sus mandantes representación integral con seguimiento riguroso de cada expediente.</p>
+    <div class="credentials">
+      <div class="credential">
+        <div class="cred-num">26+</div>
+        <div class="cred-info">
+          <div class="cred-title">Años de ejercicio profesional</div>
+          <div class="cred-desc">Estudio fundado en agosto de 1999 · Lavalle 397, San Miguel de Tucumán</div>
+        </div>
+      </div>
+      <div class="credential">
+        <div class="cred-num">34+</div>
+        <div class="cred-info">
+          <div class="cred-title">Años de docencia universitaria</div>
+          <div class="cred-desc">Docente en la Universidad Nacional de Tucumán desde 1991</div>
+        </div>
+      </div>
+      <div class="credential">
+        <div class="cred-num">3</div>
+        <div class="cred-info">
+          <div class="cred-title">Centros judiciales con cobertura</div>
+          <div class="cred-desc">San Miguel de Tucumán · Monteros · Concepción</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="perfil-visual">
+    <div class="pv-header">Titular del estudio</div>
+    <div class="pv-name">Dr. Carlos E.<br>Martínez Carabajal</div>
+    <div class="pv-title">Abogado · Docente UNT</div>
+    <div class="pv-divider"></div>
+    <div class="pv-detail">
+      <div class="pv-row">
+        <svg class="pv-row-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="pv-row-text">Lavalle 397, San Miguel de Tucumán</span>
+      </div>
+      <div class="pv-row">
+        <svg class="pv-row-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.64a16 16 0 006.29 6.29l1.16-1.16a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span class="pv-row-text">3814762190</span>
+      </div>
+      <div class="pv-row">
+        <svg class="pv-row-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span class="pv-row-text"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="096d7b64687b7d60676c735630497068616666276a666427687b">[email&#160;protected]</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto">
+  <div class="contacto-info">
+    <div class="section-eyebrow">
+      <div class="section-eyebrow-line"></div>
+      <span>Contacto</span>
+    </div>
+    <h2 class="section-title" style="margin-bottom:8px;">Consultá sin compromiso</h2>
+
+    <div class="contacto-item">
+      <div class="ci-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.64a16 16 0 006.29 6.29l1.16-1.16a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </div>
+      <div>
+        <div class="ci-label">Consultas al</div>
+        <div class="ci-value">3814762190</div>
+        <div class="ci-sub">(WhatsApp o llamadas)</div>
+      </div>
+    </div>
+
+    <div class="contacto-item">
+      <div class="ci-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      </div>
+      <div>
+        <div class="ci-label">Correo electrónico</div>
+        <div class="ci-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ff9b8d929e8d8b96919a85a0c6bf869e979090d19c9092d19e8d">[email&#160;protected]</a></div>
+      </div>
+    </div>
+
+    <div class="contacto-item">
+      <div class="ci-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8A84B" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div>
+        <div class="ci-label">Dirección</div>
+        <div class="ci-value">Lavalle 397</div>
+        <div class="ci-sub">San Miguel de Tucumán, Tucumán</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contacto-cta">
+    <div class="cta-title">¿Necesita asesoramiento legal?</div>
+    <div class="cta-desc">Contáctenos directamente por WhatsApp para coordinar una consulta. Atención personalizada y respuesta en el día.</div>
+    <button class="btn-wsp-gold">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="#0B1C2E"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.558 4.115 1.529 5.843L0 24l6.335-1.509A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.795 9.795 0 01-4.992-1.364l-.358-.212-3.758.896.952-3.656-.233-.375A9.79 9.79 0 012.182 12C2.182 6.575 6.575 2.182 12 2.182S21.818 6.575 21.818 12 17.425 21.818 12 21.818z" fill="#0B1C2E"/></svg>
+      Escribir por WhatsApp
+    </button>
+    <div class="cta-note">Consulta inicial sin costo · Respuesta en el día</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-left">Estudio Jurídico Martínez Carabajal & Abogados Asociados</div>
+  <div style="display:flex;"></div>
+</footer>
+</body>
+</html>
