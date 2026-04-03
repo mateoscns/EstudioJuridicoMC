@@ -45,7 +45,7 @@ body { overflow-x: hidden; }
     color: #fff;
   }
   .nav-brand-sub {
-    font-size: 9px;
+    font-size: 10px;
     letter-spacing: 3.5px;
     text-transform: uppercase;
     color: var(--ej-gold);
@@ -55,7 +55,7 @@ body { overflow-x: hidden; }
 
 .btn-nav-cta {
   font-family: $font-family-sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -127,8 +127,8 @@ body { overflow-x: hidden; }
     background: var(--ej-gold);
   }
   span {
-    font-size: 10px;
-    letter-spacing: 4px;
+    font-size: 13px;
+    letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--ej-gold);
     font-weight: 500;
@@ -173,7 +173,7 @@ body { overflow-x: hidden; }
   background: var(--ej-gold);
   color: var(--ej-navy-deep);
   font-family: $font-family-sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -209,23 +209,28 @@ body { overflow-x: hidden; }
 // Stats
 .hero-stats {
   display: flex;
+  align-items: center;
   gap: 40px;
   margin-top: 60px;
   padding-top: 40px;
   border-top: 1px solid rgba(200,168,75,0.15);
 }
 
+.hero-stats > div {
+  text-align: center;
+}
+
 .stat__num {
   font-family: $font-family-serif;
-  font-size: 38px;
+  font-size: 52px;
   font-weight: 600;
   color: var(--ej-gold);
   line-height: 1;
 }
 
 .stat__label {
-  font-size: 11px;
-  letter-spacing: 1px;
+  font-size: 15px;
+  letter-spacing: 1.6px;
   color: rgba(255,255,255,0.35);
   font-weight: 400;
   margin-top: 4px;
@@ -308,8 +313,8 @@ body { overflow-x: hidden; }
   padding: 18px 80px;
 
   .cob-label {
-    font-size: 10px;
-    letter-spacing: 3px;
+    font-size: 12px;
+    letter-spacing: 3.2px;
     color: var(--ej-gold);
     text-transform: uppercase;
     font-weight: 500;
@@ -352,8 +357,8 @@ body { overflow-x: hidden; }
     background: var(--ej-gold);
   }
   span {
-    font-size: 10px;
-    letter-spacing: 4px;
+    font-size: 13px;
+    letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--ej-gold);
     font-weight: 500;
@@ -410,8 +415,13 @@ body { overflow-x: hidden; }
 }
 
 .area-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 36px;
   height: 36px;
+  font-size: 36px;
+  line-height: 1;
   margin-bottom: 20px;
   color: var(--ej-gold);
 }
@@ -605,8 +615,8 @@ body { overflow-x: hidden; }
 }
 
 .ci-label {
-  font-size: 10px;
-  letter-spacing: 3px;
+  font-size: 12px;
+  letter-spacing: 3.2px;
   text-transform: uppercase;
   color: var(--ej-text-muted);
   font-weight: 500;
@@ -654,7 +664,7 @@ body { overflow-x: hidden; }
   background: var(--ej-gold);
   color: var(--ej-navy-deep);
   font-family: $font-family-sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -674,9 +684,9 @@ body { overflow-x: hidden; }
 }
 
 .cta-note {
-  font-size: 11px;
+  font-size: 13px;
   color: rgba(255,255,255,0.25);
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
 }
 
 // ──────────────────────────────────────────────
@@ -752,10 +762,14 @@ body { overflow-x: hidden; }
     font-size: 34px;
   }
   .hero-stats {
+    align-items: center;
     gap: 28px;
   }
   .stat__num {
-    font-size: 30px;
+    font-size: 38px;
+  }
+  .stat__label {
+    font-size: 13px;
   }
   .area-card {
     padding: 28px 24px;
@@ -799,16 +813,17 @@ body { overflow-x: hidden; }
     margin-bottom: 28px;
   }
   .hero-stats {
+    align-items: center;
     flex-direction: column;
     gap: 16px;
     margin-top: 36px;
     padding-top: 28px;
   }
   .stat__num {
-    font-size: 28px;
+    font-size: 34px;
   }
   .stat__label {
-    font-size: 10px;
+    font-size: 12px;
   }
   .btn-gold {
     font-size: 11px;
@@ -883,7 +898,7 @@ body { overflow-x: hidden; }
     letter-spacing: 0;
   }
   .nav-brand-sub {
-    font-size: 8px;
+    font-size: 9px;
     letter-spacing: 2px;
   }
   .hero__title {
@@ -896,7 +911,7 @@ body { overflow-x: hidden; }
     font-size: 13px;
   }
   .btn-gold {
-    font-size: 10px;
+    font-size: 11px;
     padding: 11px 14px;
     gap: 6px;
   }
@@ -907,7 +922,10 @@ body { overflow-x: hidden; }
     gap: 12px;
   }
   .stat__num {
-    font-size: 24px;
+    font-size: 28px;
+  }
+  .stat__label {
+    font-size: 11px;
   }
   .section-title {
     font-size: 24px;
